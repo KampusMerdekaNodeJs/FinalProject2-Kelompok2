@@ -1,3 +1,3 @@
 # FinalProject2-Kelompok2
-npx sequelize db:migrate
-npm start
+-npx sequelize db:migrate
+-npm start
