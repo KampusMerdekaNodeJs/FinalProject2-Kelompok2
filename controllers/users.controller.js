@@ -1,5 +1,5 @@
 const { User } = require("../models/index");
-const bcryptjs = require("bcryptjs");
+const bcrypt = require("bcryptjs");
 const jwt = require("../utils/jwt.func");
 const AppError = require("../utils/app-error");
 
@@ -71,7 +71,7 @@ class Users {
 
     if (!result) return next(new AppError("Data not found", 404));
 
-    const match = await bcryptjs.compare(password_body, result.password);
+    const match = await bcrypt.compare(password_body, result.password);
     if (!match) {
       return next(new AppError("Email/Password does not match", 403));
     }
